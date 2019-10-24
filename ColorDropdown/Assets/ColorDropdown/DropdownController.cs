@@ -25,19 +25,12 @@ public class DropdownController : MonoBehaviour {
 	public SimpleObjectPool itemObjectPool;	//to add new Items to the Dropdown
 	public Transform content;
 
-	private List<DropdownItem> dropdownItems;
+	private List<DropdownItem> dropdownItems = new List<DropdownItem> ();
 	private DropdownItem currentLabel;
 
 	// Use this for initialization
 	void Start () {
 		dropdownLabel.onClick.AddListener (dropdownClicked);
-		dropdownItems = new List<DropdownItem> ();
-
-		//for testing
-		addDropdownItem ("test1", new Color(1, 0, 0), new Color(1,1,1));
-		addDropdownItem ("test2", new Color (0, 1, 0), new Color (0, 0, 0));
-		addDropdownItem ("test3", new Color(0, 0, 1), new Color(1, 1, 1));
-		setLabel (0);
 	}
 
 	public void dropdownClicked(){
