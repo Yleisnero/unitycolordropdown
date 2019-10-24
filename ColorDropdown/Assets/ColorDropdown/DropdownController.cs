@@ -48,8 +48,13 @@ public class DropdownController : MonoBehaviour {
 		newDropdownItem.GetComponent<setupDropdownItem> ().setup (dropdownItems.Count - 1, itemText, backgroundColor, textColor);
 	}
 
-	public void setLabel(int id){
-		currentLabel = dropdownItems[id];
+	public void dropdownItemClicked(int itemID){
+		//do other stuff which should happen onValueChanged here
+		setLabel (itemID);
+	}
+
+	public void setLabel(int itemID){
+		currentLabel = dropdownItems[itemID];
 		dropdownLabel.GetComponent<Image> ().color = currentLabel.backgroundColor;
 		dropdownLabel.GetComponentInChildren<Text> ().text = currentLabel.itemText;
 		dropdownLabel.GetComponentInChildren<Text> ().color = currentLabel.textColor;

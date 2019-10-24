@@ -25,6 +25,6 @@ public class setupDropdownItem : MonoBehaviour {
 
 	private void dropdownItemClicked(){
 		print (this.itemID);
-		this.GetComponentInParent<acessDropdownController> ().dropdownController.setLabel (this.itemID);
+		this.GetComponentInParent<acessDropdownController> ().dropdownController.dropdownItemClicked (this.itemID);
 	}
 }
